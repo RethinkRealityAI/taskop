@@ -12,6 +12,9 @@ import { sectors, servicesPage } from "@/content/site";
 
 type Params = { slug: string };
 
+/** Only the three known sectors exist; anything else is a 404 at build time. */
+export const dynamicParams = false;
+
 export function generateStaticParams(): Params[] {
   return sectors.map((s) => ({ slug: s.slug }));
 }

@@ -24,7 +24,7 @@ function Avatar({ member, index }: { member: TeamMember; index: number }) {
         src={member.image}
         alt={`Portrait of ${member.name}`}
         fill
-        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+        sizes="(min-width: 1024px) 33vw, 50vw"
         className="object-cover transition-transform duration-700 ease-[var(--ease-out)] group-hover:scale-[1.04]"
       />
     );
@@ -38,7 +38,7 @@ function Avatar({ member, index }: { member: TeamMember; index: number }) {
     >
       <div className="bg-dots-light absolute inset-0 opacity-70" />
       <div className="absolute inset-0 bg-[radial-gradient(70%_60%_at_50%_100%,rgba(14,17,64,0.45),transparent)]" />
-      <span className="text-display relative text-7xl transition-transform duration-700 ease-[var(--ease-out)] group-hover:scale-[1.06] sm:text-8xl">
+      <span className="text-display relative text-5xl transition-transform duration-700 ease-[var(--ease-out)] group-hover:scale-[1.06] sm:text-7xl lg:text-8xl">
         {member.initials}
       </span>
     </div>
@@ -58,15 +58,15 @@ export default function TeamPage() {
       {/* Team grid */}
       <Section className="pt-4 md:pt-6 lg:pt-8">
         <Container>
-          <Stagger className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3" as="ul">
+          <Stagger className="grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3" as="ul">
             {team.map((m, i) => (
               <StaggerItem key={m.name} as="li">
                 <article className="group">
                   <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-lg)] ring-1 ring-line shadow-sm transition-all duration-500 ease-[var(--ease-out)] group-hover:-translate-y-1.5 group-hover:shadow-lg">
                     <Avatar member={m} index={i} />
                   </div>
-                  <h2 className="mt-5 text-xl font-semibold tracking-tight">{m.name}</h2>
-                  <p className="mt-1 text-ink-2">{m.role}</p>
+                  <h2 className="mt-4 text-base font-semibold tracking-tight sm:mt-5 sm:text-xl">{m.name}</h2>
+                  <p className="mt-1 text-sm text-ink-2 sm:text-base">{m.role}</p>
                 </article>
               </StaggerItem>
             ))}

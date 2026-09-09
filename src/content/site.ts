@@ -46,7 +46,7 @@ export const sectors: Sector[] = [
     title: "Pharmaceuticals & Health Institutions",
     shortTitle: "Pharma & Health",
     intro:
-      "When it comes to pharma and clinical trial initiatives, our role is to help you:",
+      "When it comes to pharma and clinical trial initiatives, our role is to help you navigate an ambiguous, fast-changing arena and bring your products to market successfully.",
     bullets: [
       "Navigate a global, ambiguous and fast-changing competitive arena to access relevant, actionable knowledge quickly and efficiently.",
       "Navigate crucial regulatory, product safety and market access landscapes to successfully bring your products to market.",
