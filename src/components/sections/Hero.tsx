@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 import { Container, Eyebrow } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { SplitWords } from "@/components/ui/Reveal";
@@ -14,10 +14,10 @@ const fade = (delay: number) => ({
 });
 
 export function Hero() {
-  const reduce = useReducedMotion();
   const { scrollY } = useScroll();
-  const imgY = useTransform(scrollY, [0, 600], [0, reduce ? 0 : 60]);
-  const globeY = useTransform(scrollY, [0, 600], [0, reduce ? 0 : -40]);
+  // Parallax offsets; MotionConfig reducedMotion="user" neutralises transforms for users who opt out.
+  const imgY = useTransform(scrollY, [0, 600], [0, 60]);
+  const globeY = useTransform(scrollY, [0, 600], [0, -40]);
 
   return (
     <section className="relative overflow-hidden pt-10 pb-16 md:pt-16 md:pb-24 lg:pt-20">
@@ -61,7 +61,7 @@ export function Hero() {
 
           <div className="relative lg:col-span-5">
             <motion.div
-              initial={reduce ? false : { opacity: 0, y: 40, scale: 0.98 }}
+              initial={{ opacity: 0, y: 40, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
               style={{ y: imgY }}
@@ -92,7 +92,7 @@ export function Hero() {
               </motion.div>
 
               <motion.div
-                initial={reduce ? false : { opacity: 0, x: 20 }}
+                initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
                 className="absolute -right-3 top-8 hidden rounded-2xl bg-white/90 p-4 shadow-md ring-1 ring-line backdrop-blur md:block lg:-right-8"

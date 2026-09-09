@@ -40,7 +40,7 @@ export function Eyebrow({ children, className, dark }: { children: React.ReactNo
         className,
       )}
     >
-      <span className={cn("inline-block size-1.5 rounded-full", dark ? "bg-sky" : "bg-accent")} aria-hidden />
+      <span className={cn("inline-block h-px w-8 rounded-full", dark ? "bg-sky" : "bg-accent-bright")} aria-hidden />
       {children}
     </span>
   );

@@ -1,14 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useInView, useReducedMotion } from "motion/react";
+import { useInView } from "motion/react";
 import { home } from "@/content/site";
 
 function useCountUp(target: number, active: boolean, duration = 1400) {
   const [value, setValue] = useState(0);
-  const reduce = useReducedMotion();
   useEffect(() => {
     if (!active) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let raf = 0;
     const start = performance.now();
     const tick = (now: number) => {
@@ -19,7 +19,7 @@ function useCountUp(target: number, active: boolean, duration = 1400) {
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [active, target, duration, reduce]);
+  }, [active, target, duration]);
   return value;
 }
 

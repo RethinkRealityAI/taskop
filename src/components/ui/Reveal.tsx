@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion, type Variants } from "motion/react";
+import { motion, type Variants } from "motion/react";
 import { cn } from "@/lib/utils";
 
 type RevealProps = {
@@ -13,14 +13,13 @@ type RevealProps = {
   amount?: number;
 };
 
-/** Fade-and-rise into view. Respects prefers-reduced-motion. */
+/** Fade-and-rise into view. Reduced-motion users get a fade only (see MotionConfig in the root layout). */
 export function Reveal({ children, className, delay = 0, y = 24, once = true, as = "div", amount = 0.25 }: RevealProps) {
-  const reduce = useReducedMotion();
   const Comp = motion[as];
   return (
     <Comp
       className={className}
-      initial={reduce ? false : { opacity: 0, y }}
+      initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once, amount }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay }}
@@ -52,13 +51,12 @@ export function Stagger({
   as?: "div" | "ul" | "ol";
   amount?: number;
 }) {
-  const reduce = useReducedMotion();
   const Comp = motion[as];
   return (
     <Comp
       className={className}
       variants={containerVariants}
-      initial={reduce ? "show" : "hidden"}
+      initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount }}
     >
@@ -86,7 +84,6 @@ export function StaggerItem({
 
 /** Splits a headline into words that rise in sequence. */
 export function SplitWords({ text, className, delay = 0 }: { text: string; className?: string; delay?: number }) {
-  const reduce = useReducedMotion();
   const words = text.split(" ");
   return (
     <span className={cn("inline", className)} aria-label={text}>
@@ -94,7 +91,7 @@ export function SplitWords({ text, className, delay = 0 }: { text: string; class
         <span key={i} className="inline-block overflow-hidden align-bottom pb-[0.08em] -mb-[0.08em]">
           <motion.span
             className="inline-block will-change-transform"
-            initial={reduce ? false : { y: "110%", opacity: 0 }}
+            initial={{ y: "110%", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: delay + i * 0.045 }}
             aria-hidden

@@ -240,36 +240,33 @@ export type TeamMember = {
   bio?: string;
 };
 
+// Photos: add `image: "/images/team/<name>.jpg"` to a member (and drop the file into
+// public/images/team/) and the team page will render the photo instead of the initials avatar.
 export const team: TeamMember[] = [
   {
     name: "Lanre Tunji-Ajayi, M.S.M.",
     role: "Senior Partner",
     initials: "LT",
-    image: "/images/team/lanre.jpg",
   },
   {
     name: "Pamela Ajayi",
     role: "Critical Research & Operations",
     initials: "PA",
-    image: "/images/team/pamela.jpg",
   },
   {
     name: "Samuel Ajayi",
     role: "Director of Operations",
     initials: "SA",
-    image: "/images/team/samuel.jpg",
   },
   {
     name: "Dapo Ajisafe",
     role: "Technical Analysis Lead",
     initials: "DA",
-    image: "/images/team/dapo.jpg",
   },
   {
     name: "Victor Adeolu Oriola",
     role: "Policy Professional",
     initials: "VO",
-    image: "/images/team/victor.jpg",
   },
 ];
 

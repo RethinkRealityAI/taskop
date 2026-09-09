@@ -19,7 +19,7 @@ export function Process() {
                 <span className="hidden h-px w-16 bg-line md:block" aria-hidden />
               )}
             </div>
-            <h3 className="relative mt-8 text-2xl font-semibold tracking-tight">{p.title}</h3>
+            <h3 className="relative mt-8 text-2xl font-semibold tracking-tight text-ink">{p.title}</h3>
             <p className="relative mt-3 text-ink-2">{p.body}</p>
           </div>
         </StaggerItem>

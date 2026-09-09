@@ -10,13 +10,17 @@ import { Button } from "@/components/ui/Button";
 import { nav, site } from "@/content/site";
 import { cn } from "@/lib/utils";
 
+/**
+ * Floating "glass pill" navigation, modeled on the Framer consulting template
+ * but sticky with a blur so the CTA stays reachable while scrolling.
+ */
 export function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -30,14 +34,16 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50">
-      <div
-        className={cn(
-          "transition-all duration-300",
-          scrolled ? "bg-white/75 backdrop-blur-xl shadow-[0_1px_0_rgba(11,15,26,0.06)]" : "bg-transparent",
-        )}
-      >
-        <div className="container-x flex h-[72px] items-center justify-between">
+    <header className="sticky top-0 z-50 pt-3 md:pt-4">
+      <div className="container-x">
+        <div
+          className={cn(
+            "flex h-16 items-center justify-between rounded-full pl-4 pr-2 transition-all duration-500 ease-[var(--ease-out)]",
+            scrolled || open
+              ? "bg-white/80 shadow-[0_10px_40px_-15px_rgba(11,15,26,0.25)] ring-1 ring-line backdrop-blur-xl"
+              : "bg-white/55 ring-1 ring-line/60 backdrop-blur-md",
+          )}
+        >
           <Logo />
 
           <nav aria-label="Primary" className="hidden lg:block">
@@ -58,7 +64,7 @@ export function Header() {
                       {active && (
                         <motion.span
                           layoutId="nav-pill"
-                          className="absolute inset-0 -z-10 rounded-full bg-surface"
+                          className="absolute inset-0 -z-10 rounded-full bg-surface-strong/70"
                           transition={{ type: "spring", stiffness: 380, damping: 32 }}
                         />
                       )}
@@ -69,10 +75,10 @@ export function Header() {
             </ul>
           </nav>
 
-          <div className="hidden items-center gap-3 lg:flex">
+          <div className="hidden items-center gap-2 lg:flex">
             <a
               href={`mailto:${site.email}`}
-              className="font-sans text-[0.925rem] font-medium text-ink-2 transition-colors hover:text-ink"
+              className="rounded-full px-3 py-2 font-sans text-[0.9rem] font-medium text-ink-2 transition-colors hover:text-ink"
             >
               {site.email}
             </a>
@@ -83,7 +89,7 @@ export function Header() {
 
           <button
             type="button"
-            className="inline-flex size-11 items-center justify-center rounded-full ring-1 ring-line bg-white/80 lg:hidden"
+            className="inline-flex size-11 items-center justify-center rounded-full bg-ink text-white transition-colors hover:bg-accent lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -102,7 +108,7 @@ export function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 top-[72px] z-40 bg-bg lg:hidden"
+            className="fixed inset-0 top-[84px] z-40 bg-bg lg:hidden"
           >
             <motion.nav
               aria-label="Mobile"
