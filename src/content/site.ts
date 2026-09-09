@@ -247,11 +247,13 @@ export const team: TeamMember[] = [
     name: "Lanre Tunji-Ajayi, M.S.M.",
     role: "Senior Partner",
     initials: "LT",
+    image: "/images/team/lanre.jpg",
   },
   {
     name: "Pamela Ajayi",
     role: "Critical Research & Operations",
     initials: "PA",
+    image: "/images/team/pamela.jpg",
   },
   {
     name: "Samuel Ajayi",
@@ -260,13 +262,15 @@ export const team: TeamMember[] = [
   },
   {
     name: "Dapo Ajisafe",
-    role: "Technical Analysis Lead",
+    role: "Lead Tech Consultant & Developer",
     initials: "DA",
+    image: "/images/team/dapo.jpg",
   },
   {
     name: "Victor Adeolu Oriola",
     role: "Policy Professional",
     initials: "VO",
+    image: "/images/team/victor.jpg",
   },
 ];
 
