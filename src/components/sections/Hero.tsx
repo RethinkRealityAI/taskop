@@ -1,11 +1,20 @@
 "use client";
 
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { motion, useScroll, useTransform } from "motion/react";
 import { Container, Eyebrow } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { SplitWords } from "@/components/ui/Reveal";
 import { home, sectors } from "@/content/site";
+
+// Three.js is loaded only on the client, after the page is interactive.
+const Globe3D = dynamic(() => import("@/components/ui/Globe3D").then((m) => m.Globe3D), {
+  ssr: false,
+  loading: () => (
+    <Image src="/images/globe.jpg" alt="" fill sizes="220px" className="object-cover object-[35%_50%] scale-[1.6]" />
+  ),
+});
 
 const fade = (delay: number) => ({
   initial: { opacity: 0, y: 20 },
@@ -83,8 +92,8 @@ export function Hero() {
                 style={{ y: globeY }}
                 className="animate-float absolute -left-6 -bottom-8 hidden w-44 overflow-hidden rounded-[var(--radius-lg)] bg-white p-2 shadow-lg ring-1 ring-line sm:block md:-left-10 md:w-52"
               >
-                <div className="relative aspect-square overflow-hidden rounded-[12px]">
-                  <Image src="/images/globe.jpg" alt="" fill sizes="220px" className="object-cover object-[35%_50%] scale-[1.6]" />
+                <div className="relative aspect-square overflow-hidden rounded-[12px] bg-[radial-gradient(80%_80%_at_50%_40%,#f3f6fd,#e9eef9)]">
+                  <Globe3D className="absolute inset-0" />
                 </div>
                 <p className="px-2 pt-2 pb-1 font-sans text-[0.7rem] font-semibold uppercase tracking-wider text-ink-3">
                   Serving clients worldwide
