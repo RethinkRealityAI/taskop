@@ -6,6 +6,7 @@ import { CtaBanner } from "@/components/sections/CtaBanner";
 import { Container, Section, SectionHeading, Eyebrow } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
+import { LinkedInIcon } from "@/components/ui/LinkedInIcon";
 import { about, site, team } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -142,15 +143,32 @@ export default function AboutPage() {
                 <div className="group flex h-full items-center gap-5 rounded-[var(--radius-lg)] bg-white p-5 ring-1 ring-line transition-all duration-500 ease-[var(--ease-out)] hover:-translate-y-1 hover:shadow-md sm:flex-col sm:items-start sm:p-6">
                   <span
                     className="relative inline-flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl text-white shadow-sm sm:size-20"
-                    style={{ backgroundImage: avatarGradients[i % avatarGradients.length] }}
+                    style={m.image ? undefined : { backgroundImage: avatarGradients[i % avatarGradients.length] }}
                     aria-hidden
                   >
-                    <span className="bg-dots-light absolute inset-0 opacity-60" />
-                    <span className="text-display relative text-xl sm:text-2xl">{m.initials}</span>
+                    {m.image ? (
+                      <Image src={m.image} alt="" fill sizes="80px" className="object-cover" />
+                    ) : (
+                      <>
+                        <span className="bg-dots-light absolute inset-0 opacity-60" />
+                        <span className="text-display relative text-xl sm:text-2xl">{m.initials}</span>
+                      </>
+                    )}
                   </span>
-                  <div className="min-w-0">
+                  <div className="min-w-0 flex-1">
                     <h3 className="text-lg font-semibold tracking-tight sm:mt-1">{m.name}</h3>
                     <p className="mt-1 text-sm text-ink-2">{m.role}</p>
+                    {m.linkedin && (
+                      <a
+                        href={m.linkedin}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`${m.name} on LinkedIn (opens in a new tab)`}
+                        className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-ink-3 transition-colors hover:text-[#0A66C2]"
+                      >
+                        <LinkedInIcon className="size-3.5" /> LinkedIn
+                      </a>
+                    )}
                   </div>
                 </div>
               </StaggerItem>

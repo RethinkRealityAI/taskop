@@ -6,6 +6,7 @@ import { CtaBanner } from "@/components/sections/CtaBanner";
 import { Container, Section, SectionHeading } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
+import { LinkedInIcon } from "@/components/ui/LinkedInIcon";
 import { team, type TeamMember } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -65,8 +66,23 @@ export default function TeamPage() {
                   <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-lg)] ring-1 ring-line shadow-sm transition-all duration-500 ease-[var(--ease-out)] group-hover:-translate-y-1.5 group-hover:shadow-lg">
                     <Avatar member={m} index={i} />
                   </div>
-                  <h2 className="mt-4 text-base font-semibold tracking-tight sm:mt-5 sm:text-xl">{m.name}</h2>
-                  <p className="mt-1 text-sm text-ink-2 sm:text-base">{m.role}</p>
+                  <div className="mt-4 flex items-start justify-between gap-3 sm:mt-5">
+                    <div className="min-w-0">
+                      <h2 className="text-base font-semibold tracking-tight sm:text-xl">{m.name}</h2>
+                      <p className="mt-1 text-sm text-ink-2 sm:text-base">{m.role}</p>
+                    </div>
+                    {m.linkedin && (
+                      <a
+                        href={m.linkedin}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`${m.name} on LinkedIn (opens in a new tab)`}
+                        className="mt-0.5 inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-white text-ink-2 ring-1 ring-line transition-all duration-300 hover:bg-[#0A66C2] hover:text-white hover:ring-[#0A66C2]"
+                      >
+                        <LinkedInIcon />
+                      </a>
+                    )}
+                  </div>
                 </article>
               </StaggerItem>
             ))}

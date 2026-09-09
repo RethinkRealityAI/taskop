@@ -41,9 +41,13 @@ team page, but the image files themselves were never archived.
 
 ## Not found
 
-### Samuel Ajayi (Samuel Tunji-Ajayi) — Director of Operations
+### Samuel Tunji-Ajayi — Director of Operations (superseded, see below)
 No photo saved. Tried: LinkedIn public profile (blocked, HTTP 999); Wayback copies of
 taskopglobalconsulting.com/team and /samuel-tunji-ajayi (page archived, but `sam_bio.jpg` never captured);
 public Instagram @tunjiajayisamuel (HTTP 429) and two Facebook profiles (HTTP 400, login-walled);
 old and new SCAGO team pages (no Samuel listed); Bing image search (no usable result). The only remaining
 candidates are login-walled social profiles whose identity could not be verified, so nothing was saved.
+
+### samuel.jpg — Samuel Tunji-Ajayi (added later)
+- Source: LinkedIn profile photo URL supplied directly by the site owner (800x800 original).
+- Cropped to 4:5 from the top of the frame. Confidence: high (owner-supplied).

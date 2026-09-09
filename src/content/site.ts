@@ -303,6 +303,8 @@ export type TeamMember = {
   initials: string;
   image?: string;
   bio?: string;
+  /** Public LinkedIn profile URL. */
+  linkedin?: string;
 };
 
 // Photos: add `image: "/images/team/<name>.jpg"` to a member (and drop the file into
@@ -313,29 +315,34 @@ export const team: TeamMember[] = [
     role: "Senior Partner",
     initials: "LT",
     image: "/images/team/lanre.jpg",
+    linkedin: "https://www.linkedin.com/in/lanre-tunji-ajayi-m-s-m-28a25355/",
   },
   {
-    name: "Pamela Ajayi",
+    name: "Pamela Tunji-Ajayi",
     role: "Critical Research & Operations",
-    initials: "PA",
+    initials: "PT",
     image: "/images/team/pamela.jpg",
   },
   {
-    name: "Samuel Ajayi",
+    name: "Samuel Tunji-Ajayi",
     role: "Director of Operations",
-    initials: "SA",
+    initials: "ST",
+    image: "/images/team/samuel.jpg",
+    linkedin: "https://www.linkedin.com/in/samuel-tunji-ajayi/",
   },
   {
     name: "Dapo Ajisafe",
     role: "Lead Tech Consultant & Developer",
     initials: "DA",
     image: "/images/team/dapo.jpg",
+    linkedin: "https://www.linkedin.com/in/dapoajisafe/",
   },
   {
     name: "Victor Adeolu Oriola",
     role: "Policy Professional",
     initials: "VO",
     image: "/images/team/victor.jpg",
+    linkedin: "https://www.linkedin.com/in/victor-adeolu-oriola-037914233/",
   },
 ];
 
