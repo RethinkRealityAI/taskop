@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Hero } from "@/components/sections/Hero";
 import { Marquee } from "@/components/sections/Marquee";
+import { ClientLogos } from "@/components/sections/ClientLogos";
 import { SectorCards } from "@/components/sections/SectorCards";
 import { Stats } from "@/components/sections/Stats";
 import { Process } from "@/components/sections/Process";
@@ -16,7 +17,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <Marquee />
+      <ClientLogos />
 
       {/* Intro / welcome */}
       <Section>
@@ -44,6 +45,8 @@ export default function HomePage() {
           </div>
         </Container>
       </Section>
+
+      <Marquee />
 
       {/* Who we serve */}
       <Section tone="surface">

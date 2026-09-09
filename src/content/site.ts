@@ -212,6 +212,71 @@ export const servicesPage = {
   note: "If you require a service other than those listed, please feel free to contact us.",
 };
 
+export type Client = {
+  name: string;
+  shortName: string;
+  url: string;
+  logo: { src: string; width: number; height: number };
+  /** Approximate rendered logo height in the logo strip, to balance visual weight across marks. */
+  logoHeight: number;
+  sector: string;
+  location: string;
+  description: string;
+  /** What TaskOp does / did for them. Keep to one sentence. */
+  engagement: string;
+};
+
+export const clients: Client[] = [
+  {
+    name: "Sickle Cell Awareness Group of Ontario",
+    shortName: "SCAGO",
+    url: "https://www.sicklecellanemia.ca/",
+    logo: { src: "/images/clients/scago.png", width: 531, height: 99 },
+    logoHeight: 40,
+    sector: "Non-profit / patient organization",
+    location: "Ontario, Canada",
+    description:
+      "A leading charitable patient organization providing evidence-based support, education and advocacy to families living with sickle cell disease across Ontario, with more than 20 years of advocacy for 2,500+ members.",
+    engagement: "Organizational strategy, patient engagement, digital health tools and capacity building.",
+  },
+  {
+    name: "European Sickle Cell Federation",
+    shortName: "ESCF",
+    url: "https://www.escfederation.eu/",
+    logo: { src: "/images/clients/escf.png", width: 371, height: 114 },
+    logoHeight: 36,
+    sector: "Non-profit / umbrella federation",
+    location: "Brussels, Belgium",
+    description:
+      "A European umbrella network of sickle cell disease patient organisations speaking with one united voice, representing an estimated 52,000 people living with sickle cell disease across the EU and supporting its national member organisations.",
+    engagement: "Governance, policy and strategic-plan drafting, and congress coordination.",
+  },
+  {
+    name: "Global Action Network for Sickle Cell and Other Inherited Blood Disorders",
+    shortName: "GANSID",
+    url: "https://inheritedblooddisorders.world/",
+    logo: { src: "/images/clients/gansid.png", width: 384, height: 94 },
+    logoHeight: 44,
+    sector: "Non-profit / global health network",
+    location: "Global (Africa and Southeast Asia regions)",
+    description:
+      "A global alliance advancing advocacy, capacity building, clinician mentorship and education for sickle cell disease, thalassemia, hemophilia and other inherited blood disorders, working with the WHO and patient organizations worldwide.",
+    engagement: "Program development strategy, stakeholder engagement and clinician training platforms.",
+  },
+  {
+    name: "Shea Allnaturals",
+    shortName: "Shea Allnaturals",
+    url: "https://www.allnaturalscosmetics.com/",
+    logo: { src: "/images/clients/shea-allnaturals.png", width: 1000, height: 97 },
+    logoHeight: 26,
+    sector: "Business / consumer products",
+    location: "Barrie, Ontario, Canada",
+    description:
+      "Hand-crafted botanical skincare rooted in West-African tradition: shea butter, argan oil, black soap and cold-pressed oils, made in Barrie, Ontario since 2002 and sold direct and wholesale.",
+    engagement: "Business growth consultation, website development and support.",
+  },
+];
+
 export const clientsPage = {
   hero: {
     eyebrow: "Our clients",

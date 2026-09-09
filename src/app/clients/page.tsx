@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Check } from "lucide-react";
 import { PageHero } from "@/components/sections/PageHero";
 import { SectorCards } from "@/components/sections/SectorCards";
+import { ClientCards } from "@/components/sections/ClientCards";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { Container, Section, SectionHeading, Eyebrow } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
@@ -20,8 +21,24 @@ export default function ClientsPage() {
     <>
       <PageHero eyebrow={clientsPage.hero.eyebrow} title={clientsPage.hero.headline} body={clientsPage.hero.body} />
 
-      {/* Client types */}
+      {/* Featured clients */}
       <Section className="pt-6 md:pt-10 lg:pt-12">
+        <Container>
+          <Reveal>
+            <SectionHeading
+              eyebrow="Featured clients"
+              title="Organizations we're proud to work with"
+              body="Patient organizations, global health networks and Canadian businesses that trust TaskOp with strategy, governance, engagement and delivery."
+            />
+          </Reveal>
+          <div className="mt-12">
+            <ClientCards />
+          </div>
+        </Container>
+      </Section>
+
+      {/* Client types */}
+      <Section tone="surface">
         <Container>
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <Reveal>
