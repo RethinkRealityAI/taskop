@@ -9,12 +9,7 @@ import { SplitWords } from "@/components/ui/Reveal";
 import { home, sectors } from "@/content/site";
 
 // Three.js is loaded only on the client, after the page is interactive.
-const Globe3D = dynamic(() => import("@/components/ui/Globe3D").then((m) => m.Globe3D), {
-  ssr: false,
-  loading: () => (
-    <Image src="/images/globe.jpg" alt="" fill sizes="220px" className="object-cover object-[35%_50%] scale-[1.6]" />
-  ),
-});
+const Globe3D = dynamic(() => import("@/components/ui/Globe3D").then((m) => m.Globe3D), { ssr: false });
 
 const fade = (delay: number) => ({
   initial: { opacity: 0, y: 20 },
@@ -88,16 +83,16 @@ export function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/30 via-transparent to-transparent" />
               </div>
 
+              {/* Floating particle Earth, overlapping the photo's bottom-right corner. */}
               <motion.div
                 style={{ y: globeY }}
-                className="animate-float absolute -left-6 -bottom-8 hidden w-44 overflow-hidden rounded-[var(--radius-lg)] bg-white p-2 shadow-lg ring-1 ring-line sm:block md:-left-10 md:w-52"
+                className="animate-float pointer-events-none absolute -bottom-14 -right-10 hidden size-56 sm:block md:-right-16 md:size-72 lg:-bottom-20 lg:-right-24 lg:size-80"
               >
-                <div className="relative aspect-square overflow-hidden rounded-[12px] bg-[radial-gradient(80%_80%_at_50%_40%,#f3f6fd,#e9eef9)]">
-                  <Globe3D className="absolute inset-0" />
-                </div>
-                <p className="px-2 pt-2 pb-1 font-sans text-[0.7rem] font-semibold uppercase tracking-wider text-ink-3">
-                  Serving clients worldwide
-                </p>
+                <div
+                  className="absolute inset-[12%] rounded-full bg-[radial-gradient(closest-side,rgba(37,99,235,0.22),rgba(37,99,235,0.06)_60%,transparent_72%)] blur-xl"
+                  aria-hidden
+                />
+                <Globe3D className="absolute inset-0" />
               </motion.div>
 
               <motion.div

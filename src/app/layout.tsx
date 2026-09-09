@@ -40,7 +40,6 @@ export const metadata: Metadata = {
     images: ["/images/hero.jpg"],
   },
   robots: { index: true, follow: true },
-  icons: { icon: "/favicon.ico", apple: "/images/logo-mark.png" },
 };
 
 export const viewport: Viewport = {
