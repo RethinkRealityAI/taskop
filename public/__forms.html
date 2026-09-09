@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" /><title>Netlify form definitions</title></head>
+  <body>
+    <!-- Static form definition so Netlify's build-time form detection registers the contact form.
+         The React contact form posts to this file with the same field names. -->
+    <form name="contact" data-netlify="true" netlify-honeypot="company-website" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="text" name="company-website" />
+      <input type="text" name="firstName" />
+      <input type="text" name="lastName" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="organization" />
+      <select name="sector">
+        <option>Pharmaceuticals / Health Institution</option>
+        <option>Non-Profit Organization</option>
+        <option>Business Corporation</option>
+        <option>Other</option>
+      </select>
+      <textarea name="message"></textarea>
+    </form>
+    <form name="newsletter" data-netlify="true" netlify-honeypot="company-website" hidden>
+      <input type="hidden" name="form-name" value="newsletter" />
+      <input type="text" name="company-website" />
+      <input type="email" name="email" />
+    </form>
+  </body>
+</html>

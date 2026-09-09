@@ -1,0 +1,304 @@
+/**
+ * Single source of truth for all site copy.
+ * Content restored from the archived taskopglobalconsulting.com (Wayback Machine, July 2024)
+ * and lightly edited for clarity. Edit here to update the site.
+ */
+
+export const site = {
+  name: "Taskop Global Consulting",
+  shortName: "TaskOp",
+  legalName: "TASKOP Global Consulting Inc.",
+  abbreviation: "TGCI",
+  tagline: "Global expertise. Tailored solutions.",
+  description:
+    "TaskOp Global Consulting serves health institutions, pharmaceuticals, corporations and non-profits worldwide with public health consultation, organizational support and clinical trial patient recruitment.",
+  url: "https://taskopglobalconsulting.com",
+  email: "hello@taskopglobalconsulting.com",
+  address: {
+    line1: "15 Stewart Cres",
+    line2: "Thornton, ON L0L 2N0",
+    country: "Canada",
+  },
+  foundedYear: 2020,
+} as const;
+
+export const nav = [
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Clients", href: "/clients" },
+  { label: "Team", href: "/team" },
+  { label: "Contact", href: "/contact" },
+] as const;
+
+export type Sector = {
+  slug: string;
+  title: string;
+  shortTitle: string;
+  intro: string;
+  bullets?: string[];
+  services: string[];
+  image: { src: string; alt: string };
+};
+
+export const sectors: Sector[] = [
+  {
+    slug: "pharmaceuticals",
+    title: "Pharmaceuticals & Health Institutions",
+    shortTitle: "Pharma & Health",
+    intro:
+      "When it comes to pharma and clinical trial initiatives, our role is to help you:",
+    bullets: [
+      "Navigate a global, ambiguous and fast-changing competitive arena to access relevant, actionable knowledge quickly and efficiently.",
+      "Navigate crucial regulatory, product safety and market access landscapes to successfully bring your products to market.",
+    ],
+    services: [
+      "Patient recruitment, engagement and retention in clinical trials",
+      "Patient engagement in research",
+      "Research site engagement",
+      "Protocol feasibility",
+      "Research ethics",
+      "Meeting coordination",
+    ],
+    image: {
+      src: "/images/sector-pharma.jpg",
+      alt: "Clinical research coordinator reviewing a study with a patient participant",
+    },
+  },
+  {
+    slug: "non-profit",
+    title: "Non-Profit Organizations",
+    shortTitle: "Non-Profits",
+    intro:
+      "We know that running a non-profit organization comes with many challenges. To ensure your optimal efficiency, we offer the services below.",
+    services: [
+      "Non-profit and charitable status registration",
+      "Start-up and foundational documents development",
+      "Strategic plan development",
+      "Capacity building plan",
+      "Leadership, senior management, volunteer and board training",
+      "Patient-facing material content development",
+      "Management, good governance and organizational growth",
+      "Focus group moderation",
+      "Social listening and storytelling",
+      "Patient engagement in clinical trials",
+      "Meeting, conference and congress planning and coordination",
+      "Program development strategy",
+      "Patient engagement strategy",
+      "Policy development",
+    ],
+    image: {
+      src: "/images/sector-nonprofit.jpg",
+      alt: "Board members of a community health charity in a planning workshop",
+    },
+  },
+  {
+    slug: "business",
+    title: "Business Corporations",
+    shortTitle: "Corporations",
+    intro:
+      "Whether you are self-employed or part of a large corporation, we have your back. Here are some of the ways we can support your business.",
+    services: [
+      "Corporation set-up and growth consultation",
+      "Business registration, plans, strategies, trademarks and policies",
+      "Website development and support",
+      "Guidance to achieving the competitive edge",
+      "Leadership training",
+    ],
+    image: {
+      src: "/images/sector-business.jpg",
+      alt: "Executives and a consultant reviewing growth plans in a boardroom",
+    },
+  },
+];
+
+export const home = {
+  hero: {
+    eyebrow: "Global consulting for health, non-profit and business",
+    headline: "Expertise that moves your mission forward",
+    subhead:
+      "TaskOp serves clients from around the world. By blending sector leadership with a global perspective, we tackle your requests with tenacity and prowess, guiding you through customized solutions specific to your needs.",
+    primaryCta: { label: "Start a conversation", href: "/contact" },
+    secondaryCta: { label: "Explore services", href: "/services" },
+  },
+  intro: {
+    eyebrow: "Welcome to TaskOp",
+    headline: "Results, dedication and commitment to excellent service. Every single time.",
+    body: "Whether seeking public health consultation, organizational support or recruiting patients for clinical trial purposes, our diverse clientele shares one common trait: they expect results, dedication and commitment to excellent service, and we deliver every single time. TaskOp has carved a niche space for itself, which is why people are turning to us and choose to stay with us.",
+  },
+  stats: [
+    { value: 2020, suffix: "", label: "Founded in Ontario, Canada", format: "year" },
+    { value: 3, suffix: "", label: "Sectors served", format: "number" },
+    { value: 25, suffix: "+", label: "Specialized services", format: "number" },
+    { value: 100, suffix: "%", label: "Client-driven, result-focused", format: "number" },
+  ],
+  process: [
+    {
+      step: "01",
+      title: "Listen",
+      body: "We embrace you as the expert in your field. We start by understanding your goals, constraints and the outcomes that matter.",
+    },
+    {
+      step: "02",
+      title: "Tailor",
+      body: "Fixed project or ongoing program, we shape our services to your unique scope rather than forcing you into a template.",
+    },
+    {
+      step: "03",
+      title: "Deliver",
+      body: "Work independently or integrate our team with yours. Either way, we stay accessible, hands-on and accountable to results.",
+    },
+  ],
+  values: [
+    {
+      title: "Efficiency",
+      body: "A strong pool of expertise, deployed quickly and without waste, so you get to answers faster.",
+    },
+    {
+      title: "Innovation",
+      body: "Fresh perspectives and digital-first thinking applied to complex health, policy and organizational challenges.",
+    },
+    {
+      title: "Client-driven",
+      body: "Your priorities set the agenda. We work alongside your team as advisers and hands-on contractors.",
+    },
+    {
+      title: "Result-focused",
+      body: "Every engagement is measured by outcomes delivered, not hours logged.",
+    },
+  ],
+};
+
+export const about = {
+  hero: {
+    eyebrow: "About TaskOp",
+    headline: "A niche consultancy with a global perspective",
+    body: "TASKOP Global Consulting Inc. serves health institutions, pharmaceuticals, corporations and non-profits. Day by day, our team delivers solutions that address our clients' challenges and needs, and we proudly assert that we have the unique expert knowledge to fulfill their resource gaps and project needs.",
+  },
+  mission: {
+    eyebrow: "Our mission",
+    headline:
+      "Utilize a strong pool of expertise to provide our clientele with successful solutions.",
+    body: "TASKOP Global Consulting Inc.'s mission is built on the foundational values of efficiency and innovation. At TGCI, we are client-driven and result-focused, embracing our clients as experts in their fields.",
+  },
+  approach: {
+    eyebrow: "How we work",
+    headline: "It's your call",
+    body: "We can work independently or integrate our team with yours to find the very best solutions to unwind your most complex issues. Whether it is your highly specialized or more diverse tasks, our services are shaped to meet your needs.",
+    points: [
+      "Advisers and hands-on contractors, easily accessible every step of the way",
+      "Support for fixed, project-based engagements or ongoing programs",
+      "Services tailored to your unique project or program scope",
+    ],
+  },
+};
+
+export const servicesPage = {
+  hero: {
+    eyebrow: "Services",
+    headline: "Bridge the knowledge gap and unlock unique perspectives",
+    body: "Whatever the aspiration is, we understand that getting started on the journey can be overwhelming. That's why TaskOp is one of the most cost-effective and client-friendly ways to bridge the knowledge gap and unlock unique perspectives that ensure success for our clients.",
+  },
+  offerSummary: [
+    "Organizational governance and leadership development",
+    "Capacity building",
+    "Policy drafting",
+    "Strategic and work plan drafting",
+    "Digital health solutions",
+    "Stakeholder and patient engagement",
+    "Patient and HCP education",
+    "Employee and volunteer training workshops",
+    "Charitable status registration",
+  ],
+  note: "If you require a service other than those listed, please feel free to contact us.",
+};
+
+export const clientsPage = {
+  hero: {
+    eyebrow: "Our clients",
+    headline: "Trusted by health institutions, pharmaceuticals, corporations and non-profits",
+    body: "Day by day, our team delivers solutions that address our clients' challenges and needs. We proudly assert that we have the unique expert knowledge to fulfill their resource gaps and project needs.",
+  },
+  help: {
+    headline: "We are here to help",
+    body: "TGCI's consultants are advisers and hands-on contractors that are easily accessible to provide innovative solutions every step of the way. Whether you require support for a fixed, project-based engagement or an ongoing program, TGCI can tailor our services to your unique project or program scope.",
+  },
+  testimonials: [
+    {
+      quote:
+        "They expect results, dedication and commitment to excellent service, and we deliver every single time.",
+      author: "The TaskOp promise",
+      role: "To every client",
+    },
+  ],
+};
+
+export type TeamMember = {
+  name: string;
+  role: string;
+  initials: string;
+  image?: string;
+  bio?: string;
+};
+
+export const team: TeamMember[] = [
+  {
+    name: "Lanre Tunji-Ajayi, M.S.M.",
+    role: "Senior Partner",
+    initials: "LT",
+    image: "/images/team/lanre.jpg",
+  },
+  {
+    name: "Pamela Ajayi",
+    role: "Critical Research & Operations",
+    initials: "PA",
+    image: "/images/team/pamela.jpg",
+  },
+  {
+    name: "Samuel Ajayi",
+    role: "Director of Operations",
+    initials: "SA",
+    image: "/images/team/samuel.jpg",
+  },
+  {
+    name: "Dapo Ajisafe",
+    role: "Technical Analysis Lead",
+    initials: "DA",
+    image: "/images/team/dapo.jpg",
+  },
+  {
+    name: "Victor Adeolu Oriola",
+    role: "Policy Professional",
+    initials: "VO",
+    image: "/images/team/victor.jpg",
+  },
+];
+
+export const faqs = [
+  {
+    q: "Who does TaskOp work with?",
+    a: "We serve health institutions, pharmaceutical companies, business corporations and non-profit organizations, from self-employed professionals to large enterprises, in Canada and around the world.",
+  },
+  {
+    q: "Can you support a one-off project as well as an ongoing program?",
+    a: "Yes. Whether you require support for a fixed, project-based engagement or an ongoing program, we tailor our services to your unique scope.",
+  },
+  {
+    q: "Do you work independently or with our internal team?",
+    a: "It's your call. We can work independently or integrate our team with yours to find the very best solutions to your most complex issues.",
+  },
+  {
+    q: "What if I need a service that isn't listed?",
+    a: "Reach out. Our listed services are a starting point, and we regularly scope custom engagements around a client's specific needs.",
+  },
+  {
+    q: "Where are you based?",
+    a: "We are headquartered in Thornton, Ontario, Canada, and serve clients globally.",
+  },
+];
+
+export const cta = {
+  headline: "Let's unwind your most complex challenge",
+  body: "Tell us about your project or program. We'll come back with a clear, tailored plan for how TaskOp can help.",
+  primary: { label: "Contact us", href: "/contact" },
+  secondary: { label: "Email hello@taskopglobalconsulting.com", href: "mailto:hello@taskopglobalconsulting.com" },
+};

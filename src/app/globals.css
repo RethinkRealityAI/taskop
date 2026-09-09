@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Design tokens
+   Modeled on the Framer "Consulting" template (Inter Display / Inter, blue
+   accent, off-white surfaces, 16-24px radii) and tuned to TaskOp's brand
+   palette (navy #2E3192, sky #1B9DD9 from the original logo).
+--------------------------------------------------------------------------- */
+:root {
+  --bg: #fbfbfa;
+  --bg-elevated: #ffffff;
+  --surface: #f3f3f1;
+  --surface-strong: #e9e9e6;
+  --ink: #0b0f1a;
+  --ink-2: #4b5160;
+  --ink-3: #7b8190;
+  --line: rgba(11, 15, 26, 0.08);
+  --line-strong: rgba(11, 15, 26, 0.16);
+
+  --accent: #2563eb;
+  --accent-hover: #1d4fd8;
+  --accent-soft: #e8f0ff;
+  --navy: #1b1f5e;
+  --navy-deep: #0e1140;
+  --sky: #1b9dd9;
+
+  --radius-sm: 10px;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+
+  --shadow-sm: 0 1px 2px rgba(11, 15, 26, 0.05), 0 1px 1px rgba(11, 15, 26, 0.03);
+  --shadow: 0 10px 30px -12px rgba(11, 15, 26, 0.18), 0 2px 6px rgba(11, 15, 26, 0.04);
+  --shadow-lg: 0 30px 60px -20px rgba(11, 15, 26, 0.28);
+
+  --container: 1200px;
+  --gutter: 24px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-sky: var(--sky);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow);
+  --shadow-lg: var(--shadow-lg);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body: var(--font-figtree), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --ease-out: var(--ease-out);
+  --ease-in-out: var(--ease-in-out);
+}
+
+/* ---------------------------------------------------------------------------
+   Base
+--------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-variation-settings: "opsz" 32;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------------------------------------------------------------------------
+   Utilities
+--------------------------------------------------------------------------- */
+@utility container-x {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+@utility text-display {
+  font-family: var(--font-display);
+  font-variation-settings: "opsz" 32;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  font-weight: 600;
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+/* Subtle dot-grid backdrop used behind hero and CTA */
+.bg-dots {
+  background-image: radial-gradient(rgba(11, 15, 26, 0.09) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.bg-dots-light {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Slow float used on the hero globe */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 7s ease-in-out infinite;
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(120deg, var(--navy) 0%, var(--accent) 55%, var(--sky) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hairline dividers between sections */
+.hairline {
+  border-top: 1px solid var(--line);
+}
