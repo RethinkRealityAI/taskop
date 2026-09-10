@@ -29,8 +29,12 @@ function Stat({ value, suffix, label, format }: (typeof home.stats)[number]) {
   const n = useCountUp(value, inView);
   const display = format === "year" ? String(value) : n.toLocaleString();
   return (
-    <div ref={ref} className="border-l border-line pl-6">
-      <div className="text-display text-4xl text-ink sm:text-5xl">
+    <div ref={ref} className="relative pl-6">
+      <span
+        className="absolute inset-y-0 left-0 w-[2px] rounded-full bg-[linear-gradient(180deg,var(--accent),var(--sky))] opacity-70"
+        aria-hidden
+      />
+      <div className="text-display text-4xl text-navy sm:text-5xl">
         {display}
         {suffix && <span className="text-accent">{suffix}</span>}
       </div>

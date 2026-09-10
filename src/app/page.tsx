@@ -84,9 +84,9 @@ export default function HomePage() {
                   sizes="(min-width: 1024px) 40vw, 100vw"
                   className="object-cover"
                 />
-                <div className="absolute bottom-5 left-5 right-5 rounded-2xl bg-white/90 p-4 backdrop-blur">
-                  <p className="font-sans text-[0.7rem] font-semibold uppercase tracking-wider text-ink-3">Our mission</p>
-                  <p className="mt-1 text-sm font-medium text-ink">&ldquo;{about.mission.headline}&rdquo;</p>
+                <div className="glass-strong glass-sheen absolute bottom-5 left-5 right-5 rounded-2xl p-4 ring-1 ring-white/60">
+                  <p className="font-sans text-[0.7rem] font-semibold uppercase tracking-wider text-accent">Our mission</p>
+                  <p className="mt-1 text-sm font-medium text-navy">&ldquo;{about.mission.headline}&rdquo;</p>
                 </div>
               </div>
             </Reveal>

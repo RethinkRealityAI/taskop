@@ -40,7 +40,7 @@ export default function AboutPage() {
               <div>
                 <Eyebrow className="justify-center">{about.mission.eyebrow}</Eyebrow>
                 <blockquote className="mt-6">
-                  <p className="text-3xl leading-[1.15] tracking-[-0.025em] text-ink sm:text-4xl lg:text-[3rem]">
+                  <p className="text-3xl leading-[1.15] tracking-[-0.025em] text-navy sm:text-4xl lg:text-[3rem]">
                     &ldquo;{about.mission.headline}&rdquo;
                   </p>
                 </blockquote>
@@ -108,8 +108,8 @@ export default function AboutPage() {
                   sizes="(min-width: 1024px) 40vw, 100vw"
                   className="object-cover"
                 />
-                <div className="absolute bottom-5 left-5 right-5 rounded-2xl bg-white/90 p-4 backdrop-blur">
-                  <p className="font-sans text-[0.7rem] font-semibold uppercase tracking-wider text-ink-3">Your call</p>
+                <div className="glass-strong glass-sheen absolute bottom-5 left-5 right-5 rounded-2xl p-4 ring-1 ring-white/60">
+                  <p className="font-sans text-[0.7rem] font-semibold uppercase tracking-wider text-accent">Your call</p>
                   <p className="mt-1 text-sm font-medium text-ink">
                     Work with us independently, or integrate our team with yours.
                   </p>

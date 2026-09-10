@@ -24,13 +24,15 @@ export function Faq({ items }: { items: Item[] }) {
                 aria-expanded={open}
                 aria-controls={panelId}
                 onClick={() => setOpenIndex(open ? null : i)}
-                className="flex w-full items-center justify-between gap-6 px-6 py-5 text-left transition-colors hover:bg-surface/60 md:px-8"
+                className="flex w-full items-center justify-between gap-6 px-6 py-5 text-left transition-colors hover:bg-accent-soft/50 md:px-8"
               >
-                <span className="font-sans text-base font-semibold text-ink md:text-lg">{item.q}</span>
+                <span className="font-sans text-base font-semibold text-navy md:text-lg">{item.q}</span>
                 <span
                   className={cn(
                     "inline-flex size-8 shrink-0 items-center justify-center rounded-full ring-1 ring-line transition-all duration-300",
-                    open ? "rotate-45 bg-ink text-white ring-ink" : "bg-white text-ink",
+                    open
+                      ? "rotate-45 bg-[linear-gradient(180deg,var(--accent),var(--accent-hover))] text-white ring-accent"
+                      : "bg-white text-navy",
                   )}
                   aria-hidden
                 >

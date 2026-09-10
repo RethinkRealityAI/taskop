@@ -1,8 +1,17 @@
 import { Gauge, Lightbulb, Handshake, Target } from "lucide-react";
 import { Stagger, StaggerItem } from "@/components/ui/Reveal";
+import { cn } from "@/lib/utils";
 import { home } from "@/content/site";
 
 const icons = [Gauge, Lightbulb, Handshake, Target];
+
+/** Each value gets its own chip colour so the row reads as four ideas, not one repeated tile. */
+const chips = [
+  { light: "bg-accent-soft text-accent", dark: "bg-accent/20 text-[#8ab4ff]" },
+  { light: "bg-sky-soft text-sky", dark: "bg-sky/20 text-sky" },
+  { light: "bg-[#e9e7fb] text-[#4f46e5]", dark: "bg-[#4f46e5]/25 text-[#a5b4fc]" },
+  { light: "bg-[#e0f5ec] text-[#17795e]", dark: "bg-[#17795e]/25 text-[#6ee7b7]" },
+];
 
 export function Values({ dark = false }: { dark?: boolean }) {
   return (
@@ -19,15 +28,14 @@ export function Values({ dark = false }: { dark?: boolean }) {
               }
             >
               <span
-                className={
-                  dark
-                    ? "inline-flex size-11 items-center justify-center rounded-2xl bg-white/10 text-sky"
-                    : "inline-flex size-11 items-center justify-center rounded-2xl bg-accent-soft text-accent"
-                }
+                className={cn(
+                  "inline-flex size-11 items-center justify-center rounded-2xl",
+                  dark ? chips[i % chips.length].dark : chips[i % chips.length].light,
+                )}
               >
                 <Icon className="size-5" aria-hidden />
               </span>
-              <h3 className="mt-5 text-xl font-semibold tracking-tight">{v.title}</h3>
+              <h3 className={cn("mt-5 text-xl font-semibold tracking-tight", !dark && "text-navy")}>{v.title}</h3>
               <p className={dark ? "mt-2 text-white/70" : "mt-2 text-ink-2"}>{v.body}</p>
             </div>
           </StaggerItem>

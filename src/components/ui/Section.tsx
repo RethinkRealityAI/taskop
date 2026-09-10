@@ -18,7 +18,8 @@ export function Section({ id, className, children, tone = "default", padded = tr
         "relative",
         padded && "py-20 md:py-28 lg:py-32",
         tone === "surface" && "bg-surface",
-        tone === "dark" && "bg-navy-deep text-white",
+        tone === "dark" &&
+          "bg-[linear-gradient(160deg,var(--navy)_0%,var(--navy-deep)_55%,#080a2e_100%)] text-white",
         className,
       )}
     >

@@ -219,6 +219,8 @@ export type Client = {
   logo: { src: string; width: number; height: number };
   /** Approximate rendered logo height in the logo strip, to balance visual weight across marks. */
   logoHeight: number;
+  /** Card header wash, drawn from the client's own brand and kept faint so the logo stays dominant. */
+  tint: string;
   sector: string;
   location: string;
   description: string;
@@ -233,6 +235,7 @@ export const clients: Client[] = [
     url: "https://www.toronto.ca/",
     logo: { src: "/images/clients/city-of-toronto.png", width: 1200, height: 368 },
     logoHeight: 34,
+    tint: "#1b1f5e",
     sector: "Public sector / municipal government",
     location: "Toronto, Ontario, Canada",
     description:
@@ -245,6 +248,7 @@ export const clients: Client[] = [
     url: "https://www.sicklecellanemia.ca/",
     logo: { src: "/images/clients/scago.png", width: 531, height: 99 },
     logoHeight: 30,
+    tint: "#c0392b",
     sector: "Non-profit / patient organization",
     location: "Ontario, Canada",
     description:
@@ -257,6 +261,7 @@ export const clients: Client[] = [
     url: "https://www.escfederation.eu/",
     logo: { src: "/images/clients/escf.png", width: 371, height: 114 },
     logoHeight: 38,
+    tint: "#3730a3",
     sector: "Non-profit / umbrella federation",
     location: "Brussels, Belgium",
     description:
@@ -269,6 +274,7 @@ export const clients: Client[] = [
     url: "https://inheritedblooddisorders.world/",
     logo: { src: "/images/clients/gansid.png", width: 384, height: 94 },
     logoHeight: 40,
+    tint: "#d1495b",
     sector: "Non-profit / global health network",
     location: "Global (Africa and Southeast Asia regions)",
     description:
@@ -281,6 +287,7 @@ export const clients: Client[] = [
     url: "https://www.scaon.org/",
     logo: { src: "/images/clients/scaon.png", width: 406, height: 406 },
     logoHeight: 56,
+    tint: "#17795e",
     sector: "Non-profit / community organization",
     location: "Toronto, Ontario, Canada",
     description:
@@ -293,6 +300,7 @@ export const clients: Client[] = [
     url: "https://www.allnaturalscosmetics.com/",
     logo: { src: "/images/clients/shea-allnaturals.png", width: 1000, height: 97 },
     logoHeight: 18,
+    tint: "#b07219",
     sector: "Business / consumer products",
     location: "Barrie, Ontario, Canada",
     description:

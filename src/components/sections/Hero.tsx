@@ -54,9 +54,12 @@ export function Hero() {
               </Button>
             </motion.div>
             <motion.ul {...fade(0.7)} className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-3">
-              {sectors.map((s) => (
+              {sectors.map((s, i) => (
                 <li key={s.slug} className="inline-flex items-center gap-2">
-                  <span className="size-1.5 rounded-full bg-sky" aria-hidden />
+                  <span
+                    className={["size-1.5 rounded-full bg-accent", "size-1.5 rounded-full bg-sky", "size-1.5 rounded-full bg-[#4f46e5]"][i % 3]}
+                    aria-hidden
+                  />
                   {s.title}
                 </li>
               ))}
@@ -99,10 +102,10 @@ export function Hero() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute -right-3 top-8 hidden rounded-2xl bg-white/90 p-4 shadow-md ring-1 ring-line backdrop-blur md:block lg:-right-8"
+                className="glass-strong glass-sheen absolute -right-3 top-8 hidden rounded-2xl p-4 ring-1 ring-white/60 md:block lg:-right-8"
               >
-                <p className="font-sans text-[0.7rem] font-semibold uppercase tracking-wider text-ink-3">Since {2020}</p>
-                <p className="mt-1 text-2xl font-semibold tracking-tight">Client-driven.</p>
+                <p className="font-sans text-[0.7rem] font-semibold uppercase tracking-wider text-accent">Since {2020}</p>
+                <p className="mt-1 text-2xl font-semibold tracking-tight text-navy">Client-driven.</p>
                 <p className="text-2xl font-semibold tracking-tight text-accent">Result-focused.</p>
               </motion.div>
             </motion.div>

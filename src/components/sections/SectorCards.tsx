@@ -26,14 +26,14 @@ export function SectorCards({ showCount = true }: { showCount?: boolean }) {
             </div>
             <div className="flex flex-1 flex-col p-6">
               <div className="flex items-start justify-between gap-4">
-                <h3 className="text-xl font-semibold tracking-tight">{s.title}</h3>
-                <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-surface text-ink transition-all duration-300 group-hover:bg-accent group-hover:text-white">
+                <h3 className="text-xl font-semibold tracking-tight text-navy">{s.title}</h3>
+                <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-accent-soft text-accent transition-all duration-300 group-hover:bg-accent group-hover:text-white">
                   <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden />
                 </span>
               </div>
               <p className="mt-3 line-clamp-3 text-[0.95rem] text-ink-2">{s.intro}</p>
               {showCount && (
-                <p className="mt-auto pt-5 font-sans text-xs font-semibold uppercase tracking-wider text-ink-3">
+                <p className="mt-auto pt-5 font-sans text-xs font-semibold uppercase tracking-wider text-accent">
                   {s.services.length} services
                 </p>
               )}

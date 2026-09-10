@@ -38,10 +38,8 @@ export function Header() {
       <div className="container-x">
         <div
           className={cn(
-            "flex h-16 items-center justify-between rounded-full pl-4 pr-2 transition-all duration-500 ease-[var(--ease-out)]",
-            scrolled || open
-              ? "bg-white/80 shadow-[0_10px_40px_-15px_rgba(11,15,26,0.25)] ring-1 ring-line backdrop-blur-xl"
-              : "bg-white/55 ring-1 ring-line/60 backdrop-blur-md",
+            "glass-sheen relative flex h-16 items-center justify-between rounded-full pl-4 pr-2 ring-1 transition-all duration-500 ease-[var(--ease-out)]",
+            scrolled || open ? "glass-strong ring-white/60" : "glass ring-white/50",
           )}
         >
           <Logo />
@@ -57,14 +55,14 @@ export function Header() {
                       aria-current={active ? "page" : undefined}
                       className={cn(
                         "relative rounded-full px-4 py-2 font-sans text-[0.925rem] font-medium transition-colors duration-200",
-                        active ? "text-ink" : "text-ink-2 hover:text-ink",
+                        active ? "text-accent" : "text-ink-2 hover:text-navy",
                       )}
                     >
                       {item.label}
                       {active && (
                         <motion.span
                           layoutId="nav-pill"
-                          className="absolute inset-0 -z-10 rounded-full bg-surface-strong/70"
+                          className="absolute inset-0 -z-10 rounded-full bg-[linear-gradient(180deg,rgba(37,99,235,0.16),rgba(27,157,217,0.14))] ring-1 ring-accent/25"
                           transition={{ type: "spring", stiffness: 380, damping: 32 }}
                         />
                       )}
@@ -78,7 +76,7 @@ export function Header() {
           <div className="hidden items-center gap-2 lg:flex">
             <a
               href={`mailto:${site.email}`}
-              className="rounded-full px-3 py-2 font-sans text-[0.9rem] font-medium text-ink-2 transition-colors hover:text-ink"
+              className="rounded-full px-3 py-2 font-sans text-[0.9rem] font-medium text-ink-2 transition-colors hover:text-accent"
             >
               {site.email}
             </a>
@@ -89,7 +87,7 @@ export function Header() {
 
           <button
             type="button"
-            className="inline-flex size-11 items-center justify-center rounded-full bg-ink text-white transition-colors hover:bg-accent lg:hidden"
+            className="inline-flex size-11 items-center justify-center rounded-full bg-[linear-gradient(180deg,var(--navy),var(--navy-deep))] text-white transition-colors hover:bg-[linear-gradient(180deg,var(--accent),var(--accent-hover))] lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -108,7 +106,7 @@ export function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 top-[84px] z-40 bg-bg lg:hidden"
+            className="glass-strong fixed inset-0 top-[84px] z-40 lg:hidden"
           >
             <motion.nav
               aria-label="Mobile"
@@ -123,12 +121,12 @@ export function Header() {
                   <motion.li
                     key={item.href}
                     variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0 } }}
-                    className="border-b border-line"
+                    className="border-b border-line/70"
                   >
                     <Link
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className="flex items-center justify-between py-5 text-2xl font-semibold tracking-tight text-ink"
+                      className="flex items-center justify-between py-5 text-2xl font-semibold tracking-tight text-navy transition-colors hover:text-accent"
                     >
                       {item.label}
                     </Link>
