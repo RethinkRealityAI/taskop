@@ -228,11 +228,23 @@ export type Client = {
 
 export const clients: Client[] = [
   {
+    name: "City of Toronto",
+    shortName: "City of Toronto",
+    url: "https://www.toronto.ca/",
+    logo: { src: "/images/clients/city-of-toronto.png", width: 1200, height: 368 },
+    logoHeight: 34,
+    sector: "Public sector / municipal government",
+    location: "Toronto, Ontario, Canada",
+    description:
+      "The municipal government of Canada's largest city, delivering public health, community and social services to nearly three million residents across dozens of divisions and agencies.",
+    engagement: "Community engagement, stakeholder consultation and program support.",
+  },
+  {
     name: "Sickle Cell Awareness Group of Ontario",
     shortName: "SCAGO",
     url: "https://www.sicklecellanemia.ca/",
     logo: { src: "/images/clients/scago.png", width: 531, height: 99 },
-    logoHeight: 40,
+    logoHeight: 30,
     sector: "Non-profit / patient organization",
     location: "Ontario, Canada",
     description:
@@ -244,7 +256,7 @@ export const clients: Client[] = [
     shortName: "ESCF",
     url: "https://www.escfederation.eu/",
     logo: { src: "/images/clients/escf.png", width: 371, height: 114 },
-    logoHeight: 36,
+    logoHeight: 38,
     sector: "Non-profit / umbrella federation",
     location: "Brussels, Belgium",
     description:
@@ -256,7 +268,7 @@ export const clients: Client[] = [
     shortName: "GANSID",
     url: "https://inheritedblooddisorders.world/",
     logo: { src: "/images/clients/gansid.png", width: 384, height: 94 },
-    logoHeight: 44,
+    logoHeight: 40,
     sector: "Non-profit / global health network",
     location: "Global (Africa and Southeast Asia regions)",
     description:
@@ -264,11 +276,23 @@ export const clients: Client[] = [
     engagement: "Program development strategy, stakeholder engagement and clinician training platforms.",
   },
   {
+    name: "Sudanese Community Association of Ontario",
+    shortName: "SCAON",
+    url: "https://www.scaon.org/",
+    logo: { src: "/images/clients/scaon.png", width: 406, height: 406 },
+    logoHeight: 56,
+    sector: "Non-profit / community organization",
+    location: "Toronto, Ontario, Canada",
+    description:
+      "A not-for-profit serving Sudanese Canadians since 1989, providing integration and settlement services and access to mainstream services so members can fully contribute to Canadian society.",
+    engagement: "Governance, capacity building and community program development.",
+  },
+  {
     name: "Shea Allnaturals",
     shortName: "Shea Allnaturals",
     url: "https://www.allnaturalscosmetics.com/",
     logo: { src: "/images/clients/shea-allnaturals.png", width: 1000, height: 97 },
-    logoHeight: 26,
+    logoHeight: 18,
     sector: "Business / consumer products",
     location: "Barrie, Ontario, Canada",
     description:
@@ -311,17 +335,11 @@ export type TeamMember = {
 // public/images/team/) and the team page will render the photo instead of the initials avatar.
 export const team: TeamMember[] = [
   {
-    name: "Lanre Tunji-Ajayi, M.S.M.",
-    role: "Senior Partner",
-    initials: "LT",
-    image: "/images/team/lanre.jpg",
-    linkedin: "https://www.linkedin.com/in/lanre-tunji-ajayi-m-s-m-28a25355/",
-  },
-  {
-    name: "Pamela Tunji-Ajayi",
-    role: "Critical Research & Operations",
-    initials: "PT",
-    image: "/images/team/pamela.jpg",
+    name: "Dapo Ajisafe",
+    role: "Lead Tech Consultant & Developer",
+    initials: "DA",
+    image: "/images/team/dapo.jpg",
+    linkedin: "https://www.linkedin.com/in/dapoajisafe/",
   },
   {
     name: "Samuel Tunji-Ajayi",
@@ -331,18 +349,10 @@ export const team: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/samuel-tunji-ajayi/",
   },
   {
-    name: "Dapo Ajisafe",
-    role: "Lead Tech Consultant & Developer",
-    initials: "DA",
-    image: "/images/team/dapo.jpg",
-    linkedin: "https://www.linkedin.com/in/dapoajisafe/",
-  },
-  {
-    name: "Victor Adeolu Oriola",
-    role: "Policy Professional",
-    initials: "VO",
-    image: "/images/team/victor.jpg",
-    linkedin: "https://www.linkedin.com/in/victor-adeolu-oriola-037914233/",
+    name: "Pamela Tunji-Ajayi",
+    role: "Critical Research & Operations",
+    initials: "PT",
+    image: "/images/team/pamela.jpg",
   },
 ];
 

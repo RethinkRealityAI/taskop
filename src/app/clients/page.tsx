@@ -28,7 +28,7 @@ export default function ClientsPage() {
             <SectionHeading
               eyebrow="Featured clients"
               title="Organizations we're proud to work with"
-              body="Patient organizations, global health networks and Canadian businesses that trust TaskOp with strategy, governance, engagement and delivery."
+              body="Government, patient organizations, global health networks and Canadian businesses that trust TaskOp with strategy, governance, engagement and delivery."
             />
           </Reveal>
           <div className="mt-12">
