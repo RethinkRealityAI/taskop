@@ -41,3 +41,7 @@ candidates are login-walled social profiles whose identity could not be verified
 
 Lanre Tunji-Ajayi and Victor Adeolu Oriola were removed from the team listing on 2026-09-10 at the
 owner's request; their photo files were deleted with them.
+
+### eqbal.jpg — Eqbal Ismail
+- Source: headshot supplied directly by the site owner (282x300 original).
+- Cropped to 4:5 and upscaled to 800x1000. A higher-resolution original would render crisper.

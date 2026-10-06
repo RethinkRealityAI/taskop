@@ -6,6 +6,7 @@ import { CtaBanner } from "@/components/sections/CtaBanner";
 import { Container, Section, SectionHeading } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
+import { ChevronDown, Mail } from "lucide-react";
 import { LinkedInIcon } from "@/components/ui/LinkedInIcon";
 import { team, type TeamMember } from "@/content/site";
 
@@ -59,7 +60,7 @@ export default function TeamPage() {
       {/* Team grid */}
       <Section className="pt-4 md:pt-6 lg:pt-8">
         <Container>
-          <Stagger className="grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3" as="ul">
+          <Stagger className="grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-4" as="ul">
             {team.map((m, i) => (
               <StaggerItem key={m.name} as="li">
                 <article className="group">
@@ -68,8 +69,8 @@ export default function TeamPage() {
                   </div>
                   <div className="mt-4 flex items-start justify-between gap-3 sm:mt-5">
                     <div className="min-w-0">
-                      <h2 className="text-base font-semibold tracking-tight sm:text-xl">{m.name}</h2>
-                      <p className="mt-1 text-sm text-ink-2 sm:text-base">{m.role}</p>
+                      <h2 className="text-base font-semibold tracking-tight text-navy sm:text-lg">{m.name}</h2>
+                      <p className="mt-1 text-sm text-accent">{m.role}</p>
                     </div>
                     {m.linkedin && (
                       <a
@@ -83,6 +84,29 @@ export default function TeamPage() {
                       </a>
                     )}
                   </div>
+                  {/* Native disclosure: keeps every card the same height and needs no JavaScript. */}
+                  {m.bio && (
+                    <details className="group/bio mt-3">
+                      <summary className="inline-flex cursor-pointer list-none items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover [&::-webkit-details-marker]:hidden">
+                        <span className="group-open/bio:hidden">Read bio</span>
+                        <span className="hidden group-open/bio:inline">Hide bio</span>
+                        <ChevronDown
+                          className="size-3.5 transition-transform duration-300 group-open/bio:rotate-180"
+                          aria-hidden
+                        />
+                      </summary>
+                      <p className="mt-2 text-sm leading-relaxed text-ink-2">{m.bio}</p>
+                    </details>
+                  )}
+                  {m.email && (
+                    <a
+                      href={`mailto:${m.email}`}
+                      className="mt-3 inline-flex items-start gap-1.5 text-sm font-medium text-ink-2 transition-colors hover:text-accent"
+                    >
+                      <Mail className="mt-0.5 size-3.5 shrink-0" aria-hidden />
+                      <span className="break-all">{m.email}</span>
+                    </a>
+                  )}
                 </article>
               </StaggerItem>
             ))}

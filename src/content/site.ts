@@ -337,6 +337,8 @@ export type TeamMember = {
   bio?: string;
   /** Public LinkedIn profile URL. */
   linkedin?: string;
+  /** Work email, shown as a mailto link on the team card. */
+  email?: string;
 };
 
 // Photos: add `image: "/images/team/<name>.jpg"` to a member (and drop the file into
@@ -361,6 +363,14 @@ export const team: TeamMember[] = [
     role: "Critical Research & Operations",
     initials: "PT",
     image: "/images/team/pamela.jpg",
+  },
+  {
+    name: "Eqbal Ismail",
+    role: "Information & Client Care",
+    initials: "EI",
+    image: "/images/team/eqbal.jpg",
+    email: "eqbal.i@taskopglobalconsulting.com",
+    bio: "Eqbal Ismail has a deep passion for medicine and is planning to become a clinician-scientist, aiming to bridge clinical practice with academic research to advance medical science and patient care. Beyond her studies she is a dedicated advocate for health equity and advancement, and has hands-on experience in a placenta research lab. Outside of her professional pursuits, Eqbal is driven by a broad scientific curiosity that extends into astronomy and theoretical physics.",
   },
 ];
 
