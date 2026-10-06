@@ -350,6 +350,8 @@ export const team: TeamMember[] = [
     initials: "DA",
     image: "/images/team/dapo.jpg",
     linkedin: "https://www.linkedin.com/in/dapoajisafe/",
+    email: "dapo.a@taskopglobalconsulting.com",
+    bio: "Dapo is a seasoned XR (extended reality) software developer who builds immersive 3D experiences and finds innovative ways to streamline workflows and deliver digital products. Alongside his technical work he brings a substantial healthcare background spanning personal training, health consulting, recreation therapy and a Master of Public Health. That combination lets him help health organizations use digital tools to improve outcomes and support people's autonomy over their own health, bridging the gap between health and technology.",
   },
   {
     name: "Samuel Tunji-Ajayi",
@@ -357,12 +359,16 @@ export const team: TeamMember[] = [
     initials: "ST",
     image: "/images/team/samuel.jpg",
     linkedin: "https://www.linkedin.com/in/samuel-tunji-ajayi/",
+    email: "samuel.t@taskopglobalconsulting.com",
+    bio: "Samuel brings a commercial insurance underwriting background and an economics training to TaskOp's operations, with a BA in Economics from McMaster University. Years spent assessing risk and pricing complex commercial exposures shape how he runs engagements: scoping work accurately, matching the right expertise to each project, and keeping programs moving from first conversation through to delivery. He pairs that operational discipline with a track record in business development and macroeconomic research.",
   },
   {
     name: "Pamela Tunji-Ajayi",
     role: "Critical Research & Operations",
     initials: "PT",
     image: "/images/team/pamela.jpg",
+    email: "pamela.t@taskopglobalconsulting.com",
+    bio: "Pamela is a clinical research professional and sickle cell disease patient advocate who has volunteered with the Sickle Cell Awareness Group of Ontario since 2008 and the Sickle Cell Disease Association of Canada since 2012, holding patient support research roles in both and developing and analysing surveys for patients and healthcare providers. She has managed patient recruitment and retention programs, reimbursement operations and participant travel for clinical trials across therapeutic areas including dermatology and neurology, and her published work examined how rarely retention is discussed during trial consent. At TaskOp she brings that patient-centred rigour to research design and day-to-day operations.",
   },
   {
     name: "Eqbal Ismail",
